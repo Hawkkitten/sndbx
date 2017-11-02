@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>SOFORT</h1><div class="row"><div class="col-lg-6"><p>SOFORT is a third party means of payment by Klarna Group. To process SOFORT via the Saferpay JSON API a few things must be observed.</p></div></div></section><section id="sf-requirement"><h2><a name="sf-requirement"></a> Requirements</h2><div class="row"><div class="col-lg-6"><p>The handling of SOFORT payments with Saferpay requires:</p><ul>
+<li>A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid acceptance agreement for SOFORT must be present.</li>
+</ul><p>For SOFORT activation Saferpay needs:</p><ul>
+<li>Your SOFORT Customer ID.</li>
+<li>The SOFORT Project ID.</li>
+<li>The SOFORT Project password (NOT the account password!).</li>
+<li>The Currency your customers will purchase with SOFORT.</li>
+<li>Your Saferpay Customer ID.</li>
+<li>The ID of the Saferpay eCommerce Terminal SOFORT is to be added.</li>
+</ul><p><strong>Attention</strong>: Please send the information to activate SOFORT to <strong>service.saferpay@six-payment-services.com</strong>.</p></div></div></section><section id="sf-newproject"><h2><a name="sf-newproject"></a> Create a new project for SOFORT</h2><div class="row"><div class="col-lg-6"><ol>
+<li><p>Log-in to your SOFORT member area. Choose &#8222;New project&#8220; and click &#8222;Create project&#8220;. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_create_project.png" alt="alt text" title="Create project"></p>
+</li>
+<li><p>Set the radio button for &#8222;Classic project&#8220; and click again &#8222;Create project&#8220;. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_classic_project.png" alt="alt text" title="Classic project"></p>
+</li>
+<li><p>In the next step specify general settings fort he project. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_general.png" alt="alt text" title="General settings"></p>
+</li>
+<li><p>Then enter <b><u>your address</u></b>. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_address.png" alt="alt text" title="Address"></p>
+</li>
+<li><p>Specify the currency for your customer&#8217;s payments. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_currency.png" alt="alt text" title="Currency"></p>
+</li>
+<li><p>Enter your IBAN for receiving your customer&#8217;s payments. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_iban.png" alt="alt text" title="Bank account"></p>
+</li>
+<li><p>For processiing SOFORT payments via Saferpay enter the redirect links. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_interface.png" alt="alt text" title="Interface"><br><i class="glyphicon glyphicon-hand-right"></i> Success link:<br>
+<em>https://-USER_VARIABLE_0-paymentStatus=ok-USER_VARIABLE_2--USER_VARIABLE_3--USER_VARIABLE_4--USER_VARIABLE_5--SENDER_IBAN-</em><br><i class="glyphicon glyphicon-hand-right"></i> Abort link:<br>
+<em>https://-USER_VARIABLE_0-paymentStatus=cancel</em></p>
+</li>
+<li><p>Save and click the tab &#8222;Extended settings&#8220; to complete the project settings. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_extended.png" alt="alt text" title="Extended settings"></p>
+</li>
+<li><p>Go to &#8222;Shop interface settings&#8220; and enter timeout value and link. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_timeout.png" alt="alt text" title="Timeout"><br><i class="glyphicon glyphicon-hand-right"></i> Timeout in seconds:<br>
+<em>900</em><br><i class="glyphicon glyphicon-hand-right"></i> Timeout link:<br><em>https://-USER_VARIABLE_0-paymentStatus=timeout</em></p>
+</li>
+<li><p>Again click the tab &#8222;Extended Settings&#8220; and choose &#8222;Notifications&#8220;. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_notification.png" alt="alt text" title="Notifications"></p>
+</li>
+<li><p>Click &#8222;Add new notification&#8220; and add your email address to receive notification messages. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_email.png" alt="alt text" title="Email notification"></p>
+</li>
+<li><p>Save and complete with adding the notification URL. As method choose &#8222;POST&#8220;. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_noturl.png" alt="alt text" title="Notification URL"><br><i class="glyphicon glyphicon-hand-right"></i> HTTPS URL:<br><em>https://-USER_VARIABLE_1-</em></p>
+</li>
+<li><p>Finally create a project password. Click again the tab &#8222;Extended settings&#8220; and there &#8222;Passwords and hash algorithm&#8220;. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/sofort_password.png" alt="alt text" title="Project password"></p>
+</li>
+</ol><p>The settings for processing SOFORT via Saferpay are completed!</p><hr></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

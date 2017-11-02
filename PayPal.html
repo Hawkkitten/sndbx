@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>PayPal</h1><div class="row"><div class="col-lg-6"><p>Paypal payments can be processed with Saferpay without much effort. This chapter describes what needs to be observed in this regard.</p></div></div></section><section id="ppal-requirement"><h2><a name="ppal-requirement"></a> Requirements</h2><div class="row"><div class="col-lg-6"><p>The handling of PayPal payments with Saferpay requires:</p><ul>
+<li>The corresponding Saferpay eCommerce licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid PayPal merchant account.</li>
+</ul><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> <strong>Attention</strong>: for PayPal activation on the Saferpay terminal, please inform <strong>service.saferpay@six-payment-services.com</strong> of your PayPal merchant account ID and the desired currency.</p>
+</blockquote></div></div></section><section id="api-access"><h2><a name="api-access"></a> Grant API Approval for Saferpay</h2><div class="row"><div class="col-lg-6"><p>To enable processing of PayPal payments via Saferpay a few settings must be first specified in the PayPal Mercahnt account.</p><ol>
+<li>Log in to your PayPal business account at <a href="http://www.paypal.com/">www.paypal.com</a>.</li>
+<li>Click on the profile icon <img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_icon.png" alt="alt text" title="Profile"> on the top right side of the page. From the <strong>Business Profile</strong> menu, select Account Settings.<br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_business_profile.png" alt="alt text" title="Select Account settings"></li>
+<li>From the left menu, click <strong>My selling tools</strong>.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_my_selling_tools.png" alt="alt text" title="My selling tools"></li>
+<li>In the <strong>Selling online</strong> section, click the Update link for the <strong>API access</strong> item.</li>
+<li>The <strong>API Access</strong> dialogue appears. Click on <strong>Grant API permission</strong> under the bullet point <strong>Pre-built payment solution</strong>.<br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_grant_api_permission.png" alt="alt text" title="API Access"></li>
+<li>The dialogue <strong>Add New Third Party Permissions</strong> appears:
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_add_3rd_party_permission.png" alt="alt text" title="3rd Party permission"><br><pre>Enter <b>be-sfp_api1.six-group.com</b> into <b>Third Party Permission Username</b> box. Click on <b>Lookup</b>.</pre></li>
+<li>The <em>Available Permissions</em> list will be shown:
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paypal_available_permission.png" alt="alt text" title="Available permissions"></li>
+</ol><p><i class="glyphicon glyphicon-hand-right"></i> Tick the following checkboxes and then click on <strong>Add</strong>:</p><ul>
+<li>Use Express Checkout to process payments.</li>
+<li>Issue a refund for a specific transaction.</li>
+<li>Authorize and capture your PayPal transactions.</li>
+<li>Obtain information about a single transaction.</li>
+<li>Search your transactions for items that match specific criteria and display the results</li>
+<li>Obtain authorization for pre-approved payments and initiate pre-approved transactions.</li>
+<li>Accept or deny a pending transaction.</li>
+<li>Issue a refund for any prior transaction.</li>
+</ul></div></div></section><section id="merchant-protection"><h2><a name="merchant-protection"></a> Seller Protection</h2><div class="row"><div class="col-lg-6"><p>PayPal Seller Protection protects you against payment default when your customer pays for your goods or services with PayPal. Occasionally, an expected payment does not arrive because the customer has insufficient account funds or there is a delivery fault. Your buyer may revoke any payment &#8211; for example, when credit card fraud occurs.</p><p>Seller protection occurs in the following cases:</p><ul>
+<li>Your buyer revokes a debit or credit card payment</li>
+<li>The buyer&#8217;s account has insufficient funds</li>
+<li>Your buyer has complained unjustly and sought Buyer Protection</li>
+<li>Credit Card Fraud</li>
+</ul><p>If a credit card payment or direct debit is revoked (chargeback), the sum will automatically be returned to the bank or to the customer&#8217;s card issuer. In these cases, PayPal will deduct the credited amount from your PayPal account. If Seller Protection then enters into force, PayPal will refund the amount to you after the case is closed.</p><p>To benefit from PayPal seller protection, the following conditions must be met:</p><ul>
+<li>The goods are sent insured and with a sales slip</li>
+<li>The article is sent, where possible, within seven days</li>
+<li>The goods will then be sent to the buyer address as appears in the transaction details and the PayPal account.</li>
+</ul><p>For PayPal Seller Protection to be valid when your customer uses PayPal to pay via Saferpay, it is imperative that the address details are forwarded to Saferpay.</p><p>The <a href="https://saferpay.github.io/jsonapi/#ChapterPaymentPage">Saferpay Payment Page</a> can help in forwarding the address parameters in the <strong>Payer</strong> container with the delivery address, or you can use the Saferpay Payment Page&#8217;s own address form.</p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
+    &quot;CustomerId&quot;: &quot;123123&quot;, 
+    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
+    &quot;RetryIndicator&quot;: 0, 
+    &quot;ClientInfo&quot;: {
+        &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
+        &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
+        &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
+    }
+  }, 
+  &quot;TerminalId&quot;: &quot;12345678&quot;, 
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;, 
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    }, 
+    &quot;OrderId&quot;: &quot;OrderId&quot;, 
+    &quot;Description&quot;: &quot;Description&quot;, 
+    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
+  }, 
+  &quot;PaymentMethods&quot;: [&quot;PAYPAL&quot;], 
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;,
+    &quot;DeliveryAddress&quot;: {
+      &quot;FirstName&quot;: &quot;Hans&quot;,
+      &quot;LastName&quot;: &quot;Muster&quot;,
+      &quot;DateOfBirth&quot;: &quot;1969-07-21&quot;,
+      &quot;Street&quot;: &quot;Strasse 1&quot;,
+      &quot;Zip&quot;: &quot;12345&quot;,
+      &quot;City&quot;: &quot;Musterstadt&quot;,
+      &quot;CountryCode&quot;: &quot;DE&quot;,
+      &quot;Phone&quot;: &quot;+49 40 1234 5678&quot;,
+      &quot;Email&quot;: &quot;Muster@muster.com&quot;,
+      &quot;Gender&quot;: &quot;MALE&quot;,
+    }
+  }, 
+  &quot;ReturnUrls&quot;: {
+    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
+    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
+    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
+  }, 
+  &quot;Notification&quot;: {
+    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
+    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  }
+}
+</code></pre><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Request for the use of the form:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
+    &quot;CustomerId&quot;: &quot;123123&quot;, 
+    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
+    &quot;RetryIndicator&quot;: 0, 
+    &quot;ClientInfo&quot;: {
+      &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
+      &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
+      &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
+    }
+  }, 
+  &quot;TerminalId&quot;: &quot;12345678&quot;, 
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;, 
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    }, 
+    &quot;OrderId&quot;: &quot;OrderId&quot;, 
+    &quot;Description&quot;: &quot;Description&quot;, 
+    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
+  }, 
+  &quot;PaymentMethods&quot;: [&quot;PAYPAL&quot;], 
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;
+  },
+  &quot;DeliveryAddressForm&quot;: {
+    &quot;Display&quot;: true,
+    &quot;MandatoryFields&quot;: [&quot;CITY&quot;,&quot;COUNTRY&quot;,&quot;EMAIL&quot;,&quot;FIRSTNAME&quot;,&quot;LASTNAME&quot;,&quot;PHONE&quot;,&quot;SALUTATION&quot;,&quot;STATE&quot;,&quot;STREET&quot;,&quot;ZIP&quot;],
+  },
+  &quot;ReturnUrls&quot;: {
+    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
+    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
+    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
+  }, 
+  &quot;Notification&quot;: {
+    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
+    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  }
+}
+</code></pre><p>For Canada, USA and Mexico, specification of the province or the state with the parameter <strong>CountrySubdivisionCode</strong> is required. The abbreviation which must be forwarded corresponds to the two-digit code of the province or the federal state per ISO 3166-2.</p><p>As soon as these attributes have been forwarded, Seller Protection comes into effect. PayPal verifies the supplied address details with the data filed by the buyer and refuses payment if the registered address does not concur with the specified address.</p></div></div></section><section id="partial-capture"><h2><a name="partial-capture"></a> Partial Capture</h2><div class="row"><div class="col-lg-6"><p>With Partial Capture, it is possible to book a PayPal authorisation in several individual steps. For this, additional parameters must be forwarded with <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Transaction Capture</a> in the <strong>Partial</strong> container.</p><p>With Partial Capture, the booking of an authorised amount is possible in up to ten partial steps. The total number of individual bookings may not exceed the authorised amount.</p><p>The <strong>OrderPartId</strong> parameter must be unique for a partial booking, so as to be able to refer to it later in follow-up actions, such as a credit note payment.
+With the parameter Type, it is determined whether the amount that is to be booked is a partial step or a final booking.</p></div></div></section><section id="capture"><h2><a name="capture"></a> Capture and the solvency of the customer</h2><div class="row"><div class="col-lg-6"><p>Unlike credit cards, that give the merchant a certain guarantee for the authorized money, PayPal reserves the right to deny the payout of a transaction, if the solvency of the account holder changes negatively after the authorization.</p><p>Therefore Saferpay claims the money directly, once the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> of the transaction has been successfully executed. If the money cannot be claimed, the capture then returns an error.
+We generally recommend to execute the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a> as soon as possible, to avoid any issues.</p></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

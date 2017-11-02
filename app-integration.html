@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>Mobile App integration</h1><div class="row"><div class="col-lg-6"><p>Payments done via a smartphone through a mobile app, becomes more and more important.
+Saferpay offers all the tools needed to be integrated via a mobile app.
+The following guide covers the recommended practice for a mobile-app integration.</p><p>The Integration centers around a client-server model (the app being the client), in which a merchant server hosts all the necessary data, to do the requests itself and store any vital data, the app and therefore the customer/card holder, does not need to know!</p></div></div></section><section id="mobile-process"><h2><a name="mobile-process"></a>Process</h2><div class="row"><div class="col-lg-6"><p>The general Process looks as follows:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/App-Integration.png" alt="alt text" title="App-Integration Process"></p><ol>
+<li>The app calls the server to make a payment.</li>
+<li>The Server calls Saferpay, doing either a <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a>, <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Transaction Initialize</a>, or <a href="https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Initialize">Alias Insert</a>.</li>
+<li>Saferpay responds with a Token and the RedirectUrl.</li>
+<li>The server saves the Token and forwards the RedirectUrl to the app.</li>
+<li>The app opens up the RedirectUrl either inside the default browser, or a Webview inside the app, so the customer can make his/her payment.</li>
+<li>The customer goes through the normal payment-process. After that he/she gets redirected to one of the RedirectUrls.</li>
+</ol><div class="info">
+  <p><strong>Tip:</strong> We highly recommend using the NotifyUrl (See container <strong>&quot;Notification &gt; NotifyUrl&quot;</strong>), since it is a server-to-server callback, which avoids connection issues the customer may has with his/her smartphone. Once the connection is re-established, the app may execute a subsequent request to the server, to ask for the outcome!</p>
+</div></div></div></section><section id="mobile-faq"><h2><a name="mobile-faq"></a>FAQ</h2><div class="row"><div class="col-lg-6"></div></div></section><section><h2>You are talking about a webview! Can't I just use my own form?</h2><div class="row"><div class="col-lg-6"><p>Yes, for now.
+The PCI council basically dictates how to capture and process credit card details.
+As mentioned in the <a href="https://saferpay.github.io/sndbx/#pci">PCI Chapter</a>, the usage of your own form is possible, but it requires a special certification. However this is only applicable to normal webshops. The rules for web-apps aren't defined yet, making all this a grey area.
+So you are allowed to use your own form, but only because there are no rules yet.
+We expect this to change in a way, that this is no longer allowed. So we highly recommend using the webview instead to be future-proof.</p></div></div></section><section><h2>Why should i use a Server? Can't I just integrate Saferpay directly into my App?</h2><div class="row"><div class="col-lg-6"><p>Technically yes, but it means, that you need to integrate the API-credentials and requests directly into the app.
+This is a security concern, because all things that are client-side, can be manipulated, or hacked by the user.
+The credentials then could be leaked to the public and used for mailicious requests. Additionally the Server can circumvent any connection issues Smartphones may have, if the connection is weak, unstable, or currently interrupted.</p></div></div></section><section><h2>Can't I just capture the credit card information and send it off to my server, so it can do a direct authorization?</h2><div class="row"><div class="col-lg-6"><p><strong>NO!</strong> If you would do that, you would fall into the PCI-scope under PCI-DSS SAQ-D, which means, that you'd need a full PCI certification. Without that certification, the card details <strong>MUST NOT</strong> come in contact with your systems. Not even for a short time, like inside a cache!</p></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

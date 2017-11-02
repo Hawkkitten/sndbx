@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li class="active">
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section id="securealiasstore"><h2><a name="securealiasstore"></a> Secure Alias Store</h2><div class="row"><div class="col-lg-6"></div></div></section><section><h3>Here you can see the general Secure Alias Store flow in action.</h3><div class="row"><div class="col-lg-6"><iframe style="height: 1600px; width: 900px; border: none; background-color: white;" id="frame" src="https://shop.saferpay.eu/SafpGithub/insert.php"></iframe></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

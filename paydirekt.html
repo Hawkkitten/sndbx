@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>paydirekt</h1><div class="row"><div class="col-lg-6"><p>paydirekt transactions can also be processed via the Saferpay JSON API. However, as paydirekt is a third party provider, there are a few things to consider.</p></div></div></section><section id="pd-requirement"><h2><a name="pd-requirement"></a> Requirements</h2><div class="row"><div class="col-lg-6"><ul>
+<li>A corresponding license and thus a valid identification with a username and password for the Saferpay system.</li>
+<li>At least one active Saferpay terminal via which payment can be carried out and the associated Saferpay TerminalId.</li>
+<li>A valid paydirekt merchant account</li>
+<li>A valid paydirekt API-Key</li>
+<li>A valid paydirekt API Secret</li>
+<li>The delivery address  of the purchaser</li>
+<li>JSON API Version 1.5 or later</li>
+</ul></div></div></section><section id="pd-address"><h2><a name="pd-address"></a> Handling of delivery address</h2><div class="row"><div class="col-lg-6"><p>The processing of paydirekt transactions requires that the delivery address data is submitted.<br>
+The minimum required delivery address values are:</p><ul>
+<li><em>FirstName</em></li>
+<li><em>LastName</em></li>
+<li><em>Zip</em></li>
+<li><em>City</em></li>
+<li><em>CountryCode</em></li>
+</ul><p>If the minimum required delivery address values are submitted during the Payment Page initialization, the delivery address form will not be displayed or will be skipped, except if the <strong>DeliveryAddressForm</strong> value is set to &#8220;true&#8221;.</p><p>If the minimum required delivery data is missing or not complete, the Payment Page delivery address form, will be displayed during the payment process for the cardholder/purchaser to enter or complete the missing values. In this case the delivery address form is displayed regardless of the <strong>DeliveryAddressForm</strong> configuration (true or false).</p></div></div></section><section id="pd-pending"><h2><a name="pd-pending"></a> Display of pending status for captures (booking) and refunds</h2><div class="row"><div class="col-lg-6"><p>paydirekt transfers every booking request to the buyer's bank for validation. If the validation process hasn&#8217;t yet taken place, the transaction status is shown as &quot;pending&quot;. Even if the validation process normally only takes a few seconds, Saferpay waits a few seconds for the result before transmitting the &quot;pending&quot; status with the booking response to the merchant system.
+In this case a notice will be displayed in the transaction details in the Saferpay Backoffice to inform that the booking is not yet completed. <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_pend.PNG" alt="alt text" title="paydirekt pending Backoffice">
+The status of the transaction remains as &quot;reservation&quot;, not permitting any follow-up actions until the pending action is completed.<br></p></div></div></section><section id="pd-note"><h2><a name="pd-note"></a>Notification after change from pending to final status</h2><div class="row"><div class="col-lg-6"><p>As soon as Saferpay receives a response from paydirekt that a booking or refund with the status &quot;pending&quot;  has been completed, an email notification is sent to the merchant or a server-to-server notification to the notification URL which was submitted via the JSON API. The notification informs the merchant whether the booking of the reservation or the credit has been accepted or rejected.</p><p>The merchant email address is configurable via the JSON API or the Backoffice.
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/paydirekt_email.PNG" alt="alt text" title="paydirekt email Backoffice"></p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> <strong>IMPORTANT NOTE:</strong> The &quot;PENDING&quot; status can only occur with <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Transaction/Capture</a> and <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Refund">Transaction/Refund</a>. <strong>The status-change can take up to several days, however, refunds may always be &quot;PENDING&quot; for at least one day!</strong></p>
+</blockquote></div></div></section><section id="pd-query"><h2><a name="pd-query"></a> Querying the transaction status</h2><div class="row"><div class="col-lg-6"><p>The status of a paydirekt booking and/or refund can be queried with the JSON API.  The corresponding functions are <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertCapture">Transaction/AssertCapture</a> and <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_AssertRefund">Transaction/AssertRefund</a>. These functions are only available for paydirekt transactions.</p></div></div></section><section id="pd-refund"><h2><a name="pd-refund"></a> Refunds</h2><div class="row"><div class="col-lg-6"><p>Refunds on existing paydirekt bookings can be initiated via the JSON API or manually in the Saferpay Backoffice. Any number of refunds can be issued to an existing booking. Each refund will be validated directly by paydirekt.</p></div></div></section><section id="pd-orderID"><h2><a name="pd-orderID"></a> Automatic trimming of OrderId</h2><div class="row"><div class="col-lg-6"><p>Paydirekt restricts the OrderId to a maximal length of 20 characters. The OrderId will be automatically trimmed if it exceeds the maximal length. Please keep this in mind to properly handle the use of the OrderId.</p></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

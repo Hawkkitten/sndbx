@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>BillPay</h1><div class="row"><div class="col-lg-6"><p>BillPay can also be processed via the Saferpay JSON API.
+However, as BillPay is a third party provider, there are a few things which must be observed:</p></div></div></section><section id="bp-requirement"><h2><a name="bp-requirement"></a> Requirements</h2><div class="row"><div class="col-lg-6"><ul>
+<li>A corresponding licence and thus the existence of a valid identification with a username and password for the Saferpay system.</li>
+<li>Availability of at least one active Saferpay terminal via which payment can be carried out and availability of the associated Saferpay TerminalId.</li>
+<li>A valid acceptance agreement for BillPay must be present.</li>
+<li>The address of the purchaser is present and is forwarded to BillPay.</li>
+</ul><blockquote>
+<p><strong>Attention</strong> For BillPay activation on the Saferpay terminal, please inform <strong>service.saferpay@six-payment-services.com</strong> of the BillPay access details and the desired currency.</p>
+</blockquote><hr></div></div></section><section id="bp-approval-api"><h2><a name="bp-approval-api"></a> BillPay Certification via API</h2><div class="row"><div class="col-lg-6"><p>Before they can conclude a transaction via BillPay, all BillPay customers have to be entered into a so-called &#8220;Certification Provider&#8221;. Prior to the going-live, BillPay expects each merchant to trigger a transaction via this provider. As proof, BillPay requires a complete invoice from the merchant system. After examination, information on the live account data is provided. In contracts for <strong>BillPay Purchase on Receipt</strong> and <strong>BillPay Direct Debit</strong>, the operation must be performed for each payment method.</p><p>For certification, a simple transaction on the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">Payment Page</a> is performed using the JSON API. For this, the means of payment (<strong>BillPay Purchase on Receipt</strong> or <strong>BillPay Direct Debit</strong>) must always be specified explicitly via the <strong>Payment Methods</strong> parameter. Otherwise, the payment method will not be shown on the Payment Page. In addition, it is generally the case &#8211; even in live operations &#8211; that the transfer of address details to BillPay is not necessary. This can be mapped in two different ways:</p></div></div></section><section><h3>1. Delivery via parameters</h3><div class="row"><div class="col-lg-6"><p>If address data have already been captured in the shop, they can be forwarded to Saferpay via the corresponding parameter.</p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> For this, see the <strong>&quot;Payer &gt; DeliveryAddress&quot;</strong> container.</p>
+</blockquote><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Request with address forwarding:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
+    &quot;CustomerId&quot;: &quot;123123&quot;, 
+    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
+    &quot;RetryIndicator&quot;: 0, 
+    &quot;ClientInfo&quot;: {
+        &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
+        &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
+        &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
+    }
+  }, 
+  &quot;TerminalId&quot;: &quot;12345678&quot;, 
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;, 
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    }, 
+    &quot;OrderId&quot;: &quot;OrderId&quot;, 
+    &quot;Description&quot;: &quot;Description&quot;, 
+    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
+  }, 
+  &quot;PaymentMethods&quot;: [&quot;DIRECTDEBIT&quot;], //Use &quot;INVOICE&quot; for Purchase on Receipt!
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;,
+    &quot;DeliveryAddress&quot;: {
+      &quot;FirstName&quot;: &quot;Hans&quot;,
+      &quot;LastName&quot;: &quot;Muster&quot;,
+      &quot;DateOfBirth&quot;: &quot;1969-07-21&quot;,
+      &quot;Street&quot;: &quot;Strasse 1&quot;,
+      &quot;Zip&quot;: &quot;12345&quot;,
+      &quot;City&quot;: &quot;Musterstadt&quot;,
+      &quot;CountryCode&quot;: &quot;DE&quot;,
+      &quot;Phone&quot;: &quot;+49 40 1234 5678&quot;,
+      &quot;Email&quot;: &quot;Muster@muster.com&quot;,
+      &quot;Gender&quot;: &quot;MALE&quot;,
+    }
+  }, 
+  &quot;ReturnUrls&quot;: {
+    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
+    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
+    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
+  }, 
+  &quot;Notification&quot;: {
+    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
+    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  }
+}
+</code></pre></div></div></section><section><h3>2. Data capture via a form</h3><div class="row"><div class="col-lg-6"><p>Alternatively, an address form, in which the customer must enter their address details, can be displayed in the Saferpay Payment Page. Make sure that all the address details needed for BillPay payment are requested in the address form.</p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> For this, see the <strong>&quot;DeliveryAddressForm&quot;</strong> container.</p>
+</blockquote><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Request for form usage:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
+    &quot;CustomerId&quot;: &quot;123123&quot;, 
+    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
+    &quot;RetryIndicator&quot;: 0, 
+    &quot;ClientInfo&quot;: {
+      &quot;ShopInfo&quot;: &quot;My Shop&quot;, 
+      &quot;ApplicationInfo&quot;: &quot;ApplicationInfo&quot;, 
+      &quot;OsInfo&quot;: &quot;Windows Server 2013&quot;
+    }
+  }, 
+  &quot;TerminalId&quot;: &quot;12345678&quot;, 
+  &quot;Payment&quot;: {
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;, 
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    }, 
+    &quot;OrderId&quot;: &quot;OrderId&quot;, 
+    &quot;Description&quot;: &quot;Description&quot;, 
+    &quot;PayerNote&quot;: &quot;Payernote&quot;, 
+  }, 
+  &quot;PaymentMethods&quot;: [&quot;INVOICE&quot;], //Use &quot;DIRECTDEBIT&quot; for Direct Debit!
+  &quot;Payer&quot;: {
+    &quot;IpAddress&quot;: &quot;111.111.111.111&quot;
+  },
+  &quot;DeliveryAddressForm&quot;: {
+    &quot;Display&quot;: true,
+    &quot;MandatoryFields&quot;: [&quot;CITY&quot;,&quot;COUNTRY&quot;,&quot;EMAIL&quot;,&quot;FIRSTNAME&quot;,&quot;LASTNAME&quot;,&quot;PHONE&quot;,&quot;SALUTATION&quot;,&quot;STATE&quot;,&quot;STREET&quot;,&quot;ZIP&quot;],
+  },
+  &quot;ReturnUrls&quot;: {
+    &quot;Success&quot;: &quot;https://merchanthost/success&quot;, 
+    &quot;Fail&quot;: &quot;https://merchanthost/fail&quot;, 
+    &quot;Abort&quot;: &quot;https://merchanthost/abort&quot;
+  }, 
+  &quot;Notification&quot;: {
+    &quot;MerchantEmail&quot;: &quot;merchant@saferpay.com&quot;, 
+    &quot;NotifyUrl&quot;: &quot;https://merchanthost/notify&quot;
+  }
+}
+</code></pre></div></div></section><section id="bp-assert"><h3><a name="bp-assert"></a> Assert</h3><div class="row"><div class="col-lg-6"><p>With <a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Assert">Payment Page Assert</a>, all the necessary information is sent back to the merchant. This includes the transfer of purchase-on-invoice credit transfer data that must be forwarded to the buyer.</p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Example Payment Page Assert Response:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;ResponseHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;, 
+    &quot;RequestId&quot;: &quot;33e8af17-35c1-4165-a343-c1c86a320f3b&quot;, 
+  },
+  &quot;Transaction&quot;: {
+    &quot;Id&quot;: &quot; E6tnhrAbrYGfvAYvff47b7fG6Kfb&quot;,
+    &quot;Date&quot;: &quot;2015-10-15T10:01:42.527+02:00&quot;,
+    &quot;Amount&quot;: {
+      &quot;Value&quot;: &quot;100&quot;, 
+      &quot;CurrencyCode&quot;: &quot;EUR&quot;
+    }, 
+    &quot;OrderId&quot;: &quot;Order_ID_is_mandatory&quot;, 
+    &quot;AcquirerName&quot;: &quot;Purchase on Receipt certification&quot;,
+    &quot;AcquirerReference&quot;: &quot;a83e4312-e85c-4b30-9e7c-50b511155a55&quot;,
+    &quot;Invoice&quot;: {
+      &quot;Payee&quot;: {
+        &quot;IBAN&quot;: &quot;DE2501200000TEST000000000003&quot;, 
+        &quot;HolderName&quot;: &quot;Billpay GmbH&quot;,
+        &quot;BIC&quot;: &quot;TESTBIC0003&quot;,
+        &quot;BankName&quot;: &quot;BillPay Test Bank&quot;
+      },
+      &quot;ReasonForTransfer&quot;: &quot;BPOrder_ID_is_mandatory/544&quot;,      
+      &quot;DueDate&quot;: &quot;2015-10-15T10:01:42.527+02:00&quot;
+    }
+  },
+  &quot;PaymentMeans&quot;:{
+    &quot;Brand&quot;:{
+      &quot;PaymentMethod&quot;: &quot;INVOICE&quot;,
+      &quot;Name&quot;: &quot;Billpay Purchase on Receipt certification&quot;
+    }
+  }
+}
+</code></pre></div></div></section><section id="bp-capt"><h3><a name="bp-capt"></a> Capture</h3><div class="row"><div class="col-lg-6"><p>Like other means of payment, BillPay transactions must also be booked. For this booking, use the <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Transaction Capture</a> method. If you have agreed upon the due dates of payments with BillPay, the due date of payment can be delayed in Capture Request with <strong>DelayInDays</strong>.</p><blockquote>
+<p>For this, see the <strong>Billpay</strong> container.</p>
+</blockquote><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Example for Capture Request:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;RequestHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;,
+    &quot;CustomerId&quot;: &quot;[your customer id]&quot;,
+    &quot;RequestId&quot;: &quot;[unique request id]&quot;,
+    &quot;RetryIndicator&quot;: 0
+  },
+  &quot;TransactionReference&quot;: {
+    &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;
+  },
+  &quot;Billpay&quot;: {
+    &quot;DelayInDays&quot;: 5
+  }
+}
+</code></pre><p>Some of the key information, such as the invoice data, are returned by Saferpay via <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Capture">Capture</a>.</p><blockquote>
+<p><i class="glyphicon glyphicon-hand-right"></i> Example for Capture Response:</p>
+</blockquote><pre><code class="language-json">{
+  &quot;ResponseHeader&quot;: {
+    &quot;SpecVersion&quot;: &quot;1.3&quot;,
+    &quot;RequestId&quot;: &quot;[your request id]&quot;
+  },
+  &quot;TransactionId&quot;: &quot;723n4MAjMdhjSAhAKEUdA8jtl9jb&quot;,
+  &quot;Date&quot;: &quot;2015-01-30T12:45:22.258+01:00&quot;,
+  &quot;Invoice&quot;: {
+    &quot;Payee&quot;: {
+      &quot;IBAN&quot;: &quot;DE2501200000TEST000000000003&quot;, 
+      &quot;HolderName&quot;: &quot;Billpay GmbH&quot;,
+      &quot;BIC&quot;: &quot;TESTBIC0003&quot;,
+      &quot;BankName&quot;: &quot;BillPay Test Bank&quot;
+    },
+    &quot;ReasonForTransfer&quot;: &quot;BPOrder_ID_is_mandatory/544&quot;,      
+    &quot;DueDate&quot;: &quot;2015-10-15T10:01:42.527+02:00&quot;
+  }
+}
+</code></pre><hr></div></div></section><section id="bp-approval-bo"><h2><a name="bp-approval-bo"></a> BillPay Certification via Saferpay Backoffice</h2><div class="row"><div class="col-lg-6"><p>Because it is not always possible to conduct certification in every shop without interrupting live operations, Saferpay Backoffice offers the option of creating a payment URL for a BillPay test payment via the Payment Page. This can be used to perform the acceptance test.</p><blockquote>
+<p><strong>Attetion:</strong> Because this is not loaded via the shop, the shop is not informed about the purchase. It is therefore necessary to manually create the invoice required by BillPay. You can find the necessary data for this in the Saferpay Backoffice via <strong>Transactions &gt; Journal</strong>. Here you can find a list of all transactions, which you can then view in detail.</p>
+</blockquote><p>In your Saferpay Backoffice go to the <strong>Webshop</strong> heading and select the option <strong>All Offers</strong>:<br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_all_offers.png" alt="alt text" title="Webshop > All Offers"></p><p>Then click on &#8220;Add new offer&#8221;:<br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_add_new_offer.png" alt="alt text" title="Add new offer"></p><p>The form for a new offer is shown: <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_form.png" alt="alt text" title="New offer form"></p><p>Fill out the fields for the description and the amount and, if necessary, select the currency and add the return addresses for your webshop. Then click on &#8220;Save&#8221;. <br></p><p>The stored offer will appear with the test payment URL for BillPay acceptance:<br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_offer_url.png" alt="alt text" title="Offer URL"></p><blockquote>
+<p><strong>Attention!</strong> Make sure that the checkbox marked &#8220;Caution: only use for test transactions!&#8221; has been ticked.</p>
+</blockquote><blockquote>
+<p><strong>Attention!</strong> When creating an acceptance invoice, ensure that the test URL created contains a random OrderId allocated by Saferpay.</p>
+</blockquote><blockquote>
+<p><strong>Attention!</strong> When using a test URL, the customer address must be entered manually in the Payment Page.</p>
+</blockquote><p>After loading the links, the Saferpay Payment Page appears with one or more options for BillPay test payment methods: <br>
+<img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/billpay_payment_page.png" alt="alt text" title="Payment Page"></p></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

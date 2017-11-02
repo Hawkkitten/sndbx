@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>F.A.Q</h1><div class="row"><div class="col-lg-6"></div></div></section><section><h2>Is there some kind of test-system or sandbox, where i can test the API?</h2><div class="row"><div class="col-lg-6"><p>Yes! Saferpay offers a test system, where you can <a href="https://test.saferpay.com/BO/Welcome?lang=en">register for your own individual test account</a>. Please note, that the test system and the live environment run on two seperate systems.
+Due to that, you need to apply seperate base-urls for test and live, when doing requests, as <a href="https://saferpay.github.io/jsonapi/index.html#intro">mentioned here (see right side)</a>.</p></div></div></section><section><h2>Can I use my test account on the live system?</h2><div class="row"><div class="col-lg-6"><p>No, the test and live systems are completely separate from each other. No data exchange takes place.</p></div></div></section><section><h2>Can I use real card details in the test environment? <br>When i use my Card on the Test environment i get an error. What is the cause?</h2><div class="row"><div class="col-lg-6"><p>The test-environment does <strong>NOT</strong> accept real credit cards, to avoid confusion between live and test.
+Only test cards may be used on the test-environment, which you can <a href="https://www.six-payment-services.com/en/site/saferpay-support/testaccount/Saferpay_Testdaten.html">find here</a>.</p></div></div></section><section><h2>Which functions are available in the test system?</h2><div class="row"><div class="col-lg-6"><p>On the test system, all Saferpay functions are available. Saferpay Business is usually switched off for test accounts. For this reason, it is important that you decide in advance whether or not you will also be using the business features in live operations later on.</p></div></div></section><section><h2>Which payment methods can I test?</h2><div class="row"><div class="col-lg-6"><p>Currently, the following payment methods are available:</p><ul>
+<li>SEPA Direct Debit (Currency EUR only)</li>
+<li>PayPal</li>
+<li>American Express</li>
+<li>Diners Club</li>
+<li>JCB</li>
+<li>Mastercard</li>
+<li>myOne</li>
+<li>Shopping Bonus Card</li>
+<li>VISA</li>
+<li>Masterpass Wallet</li>
+<li>Additional payment methods can be made available on demand. For this, please contact the <a href="mailto:integration.saferpay@six-payment-services.com?subject=Additional%20payment%20methods">Saferpay Integration Team</a>.</li>
+</ul></div></div></section><section><h2>What currencies are available in the test system?</h2><div class="row"><div class="col-lg-6"><p>By default, EUR and CHF are enabled on test accounts. Other currencies can be activated on demand. For this, please contact the <a href="mailto:integration.saferpay@six-payment-services.com?subject=Test%20Account%20Currencies">Saferpay Integration Team</a>.</p></div></div></section><section><h2>Can i combine Saferpay with my ERP-system?</h2><div class="row"><div class="col-lg-6"><p>Generally yes!
+There are multiple options to do this however.
+Two scenarios may be:</p><p>1.) The shop does the transaction, but the ERP does the <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture</a> only at a point, when the goods can be shipped!
+You simply need to set up a connection between the shop and ERP-system, so the transaction-data can be shared between them, and the ERP can execute the <a href="http://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture">Capture</a> using the transaction id the shop recieves from Saferpay.
+But please note, that reservations can expire, depending on the brand and issuer of the card, <a href="https://saferpay.github.io/sndbx/index.html#capture">as stated here</a>. To avoid this, you may want to use approach 2.</p><p>2.) The customers credit card gets saved by the shop within the <a href="http://saferpay.github.io/sndbx">Saferpay Secure Card Data Store</a> but the transaction happens at a point, when all the goods can be shipped, executed by the ERP-system, using the obtained Secure Card Data-data.
+Note, that the solvency of the card holder can change until this point.</p><p>There are more scenarios Saferpay can cover, together with different ERP-systems.
+If you have some detailed questions, feel free to ask the <a href="https://saferpay.github.io/sndbx/contact.html">Integration Support Team</a></p></div></div></section><section><h2>I have already a shop system. Do you offer an extension for it?</h2><div class="row"><div class="col-lg-6"><p>Ready-to-use Saferpay payment extensions for several shop systems are offered by our partner <a href="https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/saferpay.html">Customweb</a>. You get 1 year support and, if wanted, an installation service!</p></div></div></section><section><h2>I have finished my testing. What are the next steps? How do i go live?</h2><div class="row"><div class="col-lg-6"><p>If you haven't already, you need to contact our <a href="https://www.six-payment-services.com/en/shared/contacts.html#ch">Sales</a> in order to sign a live contract.</p><p>We will activate the things necessary for you and then send you the respective logins and Ids (like Customer-and TerminalId), you need  to go live.
+However, there are things you need to change with the Go-Live, before you can start accepting payments:</p><ul>
+<li><p>As mentioned, you will get new Logins and IDs with your live account. Those have to be changed inside your application.</p>
+</li>
+<li><p>The JSON-API user and password need to be set. Once you have recieved your live Backoffice user, you need to log into <a href="https://www.saferpay.com/BO/Login">this site here</a>. Then you need to create your own credentials under <strong>Settings &gt; JSON API basic authentication</strong> or  <strong>JSON API client certificate</strong>. Those credentials have to be entered inside your application.</p>
+</li>
+<li><p>Lastly, you need to change the request-gateway URL from <strong>https://test.saferpay.com/api/[...]</strong> to <strong>https://www.saferpay.com/api/[...]</strong> in order  to send your requests to the Saferpay live-system, instead of the test-system. Some pre-made modules (Like the ones by our partner Customweb!) however offer a live-mode, which does this step for you! You simply have to activate it!</p>
+</li>
+</ul></div></div></section><section><h2>We use a Firewall and therefore have to whitelist the IPs for the Saferpay test-system/production. Where can i find them?</h2><div class="row"><div class="col-lg-6"><p>The following IPs may need to be whitelisted in order to accept outgoing and incoming requests from and to Saferpay:</p><ul>
+<li>153.46.244.84</li>
+<li>193.247.180.4</li>
+<li>153.46.254.150</li>
+<li>153.46.254.164</li>
+<li>83.138.151.81</li>
+<li>153.46.254.209</li>
+</ul></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li class="active">
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>Payment Means for testing</h1><div class="row"><div class="col-lg-6"><p>In this Chapter you will find a list of payment means you can use for testing purposes!</p><div class="info">
+    <p><strong>Note:</strong> The CVC can be any value you want, same goes for the Expiration-date. However, the latter needs to be valid. If you enter a date set in the past, the card will be rejected, because it is expired!</p>
+  </div><p><a name="pm-visa"></a></p><div class="dropdown" id="visa-cards">VISA &#8659;</div><p></p><div style="display:none;" id="visa-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9010100052000004</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010100052101000</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. Bank rejects liability shift despite a successful authentication!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010100352000001</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication Attempt&quot;</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010101052000002</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank grants liability shift! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010101052101008</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank rejects liability shift!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010101152000001</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Unable to enroll&quot;</strong>. 3D Secure is not possible! <br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010100152000003</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010101052900003</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010500004000004</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating DCC&quot;</strong> with the card currency JPY.
+        </td>
+      </tr>
+       <tr>
+        <td style="word-break: unset;">9010400004000007</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating DCC&quot;</strong> with the card currency USD.
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9010000004150008</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Card Check failed&quot;</strong>. <br>A decline will simulated by the internal card check with Alias Insert. Authorization requests with this card will be declined as well.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-mc"></a></p><div class="dropdown" id="master-cards">Mastercard &#8659;</div><p></p><div style="display:none;" id="master-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9030100052000000</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030100052101006</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. Bank rejects liability shift despite a successful authentication!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030100352000007</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication Attempt&quot;</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030101052000008</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank grants liability shift! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030101052101004</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank rejects liability shift!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030101152000007</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Unable to enroll&quot;</strong>. 3D Secure is not possible! <br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030100152000009</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030101052900009</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030500004000000</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating DCC&quot;</strong> with the card currency JPY.
+        </td>
+      </tr>
+       <tr>
+        <td style="word-break: unset;">9030400004000003</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating DCC&quot;</strong> with the card currency USD.
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9030000004150004</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Card Check failed&quot;</strong>. <br>A decline will simulated by the internal card check with Alias Insert. Authorization requests with this card will be declined as well.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-amex"></a></p><div class="dropdown" id="amex-cards">American Express &#8659;</div><p></p><div style="display:none;" id="amex-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9070100052000001</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100052101007</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. Bank rejects liability shift despite a successful authentication!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100352000008</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication Attempt&quot;</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052000009</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank grants liability shift! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052101005</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank rejects liability shift!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101152000008</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Unable to enroll&quot;</strong>. 3D Secure is not possible! <br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070100152000000</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9070101052900000</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-diners"></a></p><div class="dropdown" id="diners-cards">Diners Club &#8659;</div><p></p><div style="display:none;" id="diners-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9050100052000005</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050100052101001</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. Bank rejects liability shift despite a successful authentication!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050100352000002</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication Attempt&quot;</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050101052000003</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank grants liability shift! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050101052101009</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;not enrolled&quot;</strong>. Bank rejects liability shift!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050101152000002</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Unable to enroll&quot;</strong>. 3D Secure is not possible! <br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> false<br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050100152000004</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9050101052900004</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-maestro"></a></p><div class="dropdown" id="maestro-cards">Maestro International &#8659;</div><p></p><div style="display:none;" id="maestro-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9040100052000008</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9040100052101004</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. Bank rejects liability shift despite a successful authentication!<br><strong>Liability shift:</strong> NO, <strong>Authenticated:</strong> true <br>
+          <div class="warning">
+            <p><strong>Important:</strong> Saferpay will still attempt the authorization! Accepting or declining this transaction is up to the merchant!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9040100352000005</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication Attempt&quot;</strong>. Simulates an authentication attempt, where the bank grants the liability shift<br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> false <br>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9040100152000007</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9040101052900007</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-jcb"></a></p><div class="dropdown" id="jcb-cards">JCB &#8659;</div><p></p><div style="display:none;" id="jcb-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9060100052000003</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Success Card&quot;</strong>. This card simulates a successful transaction!</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9060101052900002</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-myone"></a></p><div class="dropdown" id="myone-cards">My One &#8659;</div><p></p><div style="display:none;" id="myone-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9080100052000009</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Success Card&quot;</strong>. This card simulates a successful transaction!</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9080101052900008</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-bonus"></a></p><div class="dropdown" id="bonus-cards">Bonus Card &#8659;</div><p></p><div style="display:none;" id="bonus-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">9090100052000007</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Success Card&quot;</strong>. This card simulates a successful transaction!</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">9090101052900006</td>
+        <td style="border-left: 1px solid #ddd;">Card for <strong>&quot;simulating response codes&quot; via the amount</strong>. <br> The last two digits in the currency amount determine the issuance of the authorisation request. A successful payment is only triggered with a value equal to &quot;00&quot; or &quot;01&quot;. While requests with the AMOUNT &quot;00&quot; simulate a request with an &quot;enrolled&quot; card, the amount &quot;01&quot; simulates a transaction without a liability shift. For all other values that are different to &quot;00&quot; or &quot;01&quot;, a rejection is simulated with the authorisation.
+        </td>
+        </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-bc"></a></p><div class="dropdown" id="bc-cards">Bancontact &#8659;</div><p></p><div style="display:none;" id="bc-cards-hider">
+  <div class="info">
+    <p><strong>Note:</strong> Bancontact uses an authentication-procedure similar to 3D Secure with VISA and MasterCard. However the difference is, that Bancontact will automatically refuse all payments, that aren't fully authenticated. Due to this, there are only these few outcomes possible.</p>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Card Number</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">91108000500000005</td>
+        <td style="border-left: 1px solid #ddd;">Card <strong>&quot;enrolled&quot;</strong>. This card is subjected to the full 3D Secure authentication process! <br><strong>Liability shift:</strong> YES, <strong>Authenticated:</strong> true</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">91108001501800005</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Authentication failed&quot;</strong>. The card holder failed to authenticate him/herself!<br>
+          <div class="warning">
+            <p><strong>Important:</strong> In this case, the authorization will fail!</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-sepa"></a></p><div class="dropdown" id="sepa-cards">SEPA Direct Debit &#8659;</div><p></p><div style="display:none;" id="sepa-cards-hider">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>IBAN</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">DE17970000011234567890</td>
+        <td style="border-left: 1px solid #ddd;"><strong>&quot;Success IBAN&quot;</strong>. IBAN to simulate a successful transaction.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">DE52970000021234567890</td>
+        <td style="border-left: 1px solid #ddd;">IBAN to <strong>&quot;simulate response codes&quot;</strong>. <br>
+        IBAN for controlling authorisation codes via the amount.<br>
+        210nn simumulates a decline, where &quot;nn&quot; is the simmulated decline code.<br>
+        Requests with other amounts simumulate positive responses.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p><a name="pm-paypal"></a></p><div class="dropdown" id="paypal-cards">PayPal &#8659;</div><p></p><div style="display:none;" id="paypal-cards-hider">
+  <p>PayPal payments can be operated by a simulator in the Saferpay test account. The first version of the simulator supports successful transactions and declines only. The range of function will be upgraded soon.</p>
+</div><p><a name="pm-twint"></a></p><div class="dropdown" id="twint-cards">TWINT &#8659;</div><p></p><div style="display:none;" id="twint-cards-hider">
+  <p>On the test environment, Saferpay offers a TWINT Simulator for the Currencies CHF only, since this Payment Method is only avalable for the swiss market.<br>
+  The Simulator is controlled by submitting different amount-values to simulate the following cases:</p>
+  <div class="info">
+      <p><strong>Note:</strong> Any other amount will cause a success after 20 seconds!</p>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th class="text-center">Test-case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="word-break: unset;">6611</td>
+        <td style="border-left: 1px solid #ddd;">The execution of the debit callback is delayed by 1 second.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6612</td>
+        <td style="border-left: 1px solid #ddd;">The execution of the debit callback is delayed by 10 seconds.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6613</td>
+        <td style="border-left: 1px solid #ddd;">The execution of the debit callback is delayed by 60 seconds.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6614</td>
+        <td style="border-left: 1px solid #ddd;">The execution of the debit callback is delayed by 120 seconds.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6615</td>
+        <td style="border-left: 1px solid #ddd;">The execution of the debit callback is delayed by 600 seconds.</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6651</td>
+        <td style="border-left: 1px solid #ddd;">Returns an authorization declined result</td>
+      </tr>
+      <tr>
+        <td style="word-break: unset;">6661</td>
+        <td style="border-left: 1px solid #ddd;">Returns an authorization expired result</td>
+      </tr>
+    </tbody>
+  </table>
+</div></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+

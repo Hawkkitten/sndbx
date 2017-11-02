@@ -1,0 +1,632 @@
+/* CSS is generated automatically */
+/*
+ *	General rules
+ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 12px;
+  line-height: 18px;
+}
+body {
+  float: left;
+  min-width: 500px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+h1,
+h2,
+h3 {
+  color: #2b4173;
+}
+ul {
+  list-style: none;
+}
+input,
+select {
+  border: 1px solid #8298b4;
+}
+input:focus,
+select:focus {
+  border: 1px solid orange;
+}
+input {
+  padding: 1px 5px;
+}
+.input-large {
+  width: 250px;
+}
+.input-medium {
+  width: 125px;
+}
+.input-small {
+  width: 62px;
+}
+.icon-hint {
+  cursor: pointer;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+legend {
+  display: none;
+}
+/*
+ * header (of all pages)
+ */
+header {
+  padding-top: 1em;
+}
+header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+header h1 {
+  float: left;
+  font-size: 1.6em;
+  vertical-align: middle;
+}
+header figure {
+  float: right;
+  width: auto;
+  right: 5px;
+  text-align: right;
+  margin: 0 0 5.5px;
+}
+header figure .img-logo {
+  vertical-align: middle;
+  max-height: 63px;
+  max-width: 63px;
+}
+/*
+ * footer (of all pages)
+ */
+footer {
+  display: table;
+  width: 100%;
+  padding-top: 1em;
+}
+footer a,
+footer a:visited {
+  text-decoration: none;
+  color: #4183c4;
+}
+footer a:focus,
+footer a:hover {
+  color: darkorange;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  display: table-row;
+}
+footer ul li {
+  display: table-cell;
+  width: 33%;
+}
+footer ul .navitem-back {
+  text-align: left;
+}
+footer ul .navitem-abort {
+  text-align: center;
+}
+footer ul .navitem-next {
+  text-align: right;
+}
+.btn-next {
+  border-radius: 0.5em;
+  padding: 0.3em 1.5em;
+  background: #0AAD44;
+  background: -moz-linear-gradient(top, #0aad44 0, #0a7a33 100%);
+  background: linear-gradient(to bottom, #0aad44 0, #0a7a33 100%);
+  border: 1px solid #0A7A33;
+  color: #fff;
+}
+.btn-abort {
+  display: none;
+}
+/*
+ * boxes (info, success, and error)
+ */
+.box .icon-information,
+.box .icon-success,
+.box .icon-error {
+  border: 1px solid;
+  border-radius: 20px;
+  display: block;
+  float: left;
+  font-weight: bold;
+  height: 20px;
+  text-align: center;
+  width: 20px;
+}
+.box .text {
+  padding-left: 3em;
+}
+.box .text p {
+  margin-top: 0;
+}
+.box ul {
+  margin: 0;
+  padding: 0;
+}
+.box.box-error,
+.box.box-information,
+.box.box-success,
+.box.box-success {
+  margin-bottom: 1em;
+  padding: 1em;
+  border-width: 1px;
+  border-radius: 0.5em;
+  border-style: solid;
+}
+.box.box-error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.box.box-information {
+  background: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+.box.box-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.box.box-payment,
+.box.box-shop,
+.box.box-language {
+  display: none;
+}
+.primary-gradient,
+.page-paymentselection main section ul li button,
+.page-card main fieldset {
+  background: #1e5799;
+  background: -moz-linear-gradient(45deg, #1e5799 0, #2989d8 50, #207cca 51%, #7db9e8 100);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #1e5799), color-stop(50, #2989d8), color-stop(51%, #207cca), color-stop(100, #7db9e8));
+  background: -webkit-linear-gradient(45deg, #1e5799 0, #2989d8 50, #207cca 51%, #7db9e8 100);
+  background: -o-linear-gradient(45deg, #1e5799 0, #2989d8 50, #207cca 51%, #7db9e8 100);
+  background: -ms-linear-gradient(45deg, #1e5799 0, #2989d8 50, #207cca 51%, #7db9e8 100);
+  background: linear-gradient(45deg, #1e5799 0, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=1);
+}
+.secondary-gradient,
+.btn-next:focus,
+.page-paymentselection main section ul li button:hover,
+.page-paymentselection main section ul li button:focus,
+.page-paymentselection main section ul li button:active,
+.page-card main fieldset .form-group:nth-of-type(4) {
+  background: #ffa332;
+  background: -moz-linear-gradient(45deg, #ffa332 0, #ffd930 50%, #ffc528 51%, #f4d527 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #ffa332), color-stop(50%, #ffd930), color-stop(51%, #ffc528), color-stop(100, #f4d527));
+  background: -webkit-linear-gradient(45deg, #ffa332 0, #ffd930 50%, #ffc528 51%, #f4d527 100%);
+  background: -o-linear-gradient(45deg, #ffa332 0, #ffd930 50%, #ffc528 51%, #f4d527 100%);
+  background: -ms-linear-gradient(45deg, #ffa332 0, #ffd930 50%, #ffc528 51%, #f4d527 100%);
+  background: linear-gradient(45deg, #ffa332 0, #ffd930 50, #ffc528 51%, #f4d527 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa332', endColorstr='#f4d527', GradientType=1);
+}
+/*
+ * payment selection
+ */
+.page-paymentselection {
+  display: table;
+}
+.page-paymentselection header h1 {
+  display: none;
+}
+.page-paymentselection header:lang(de)::after {
+  content: 'Zahlungsmethoden';
+}
+.page-paymentselection header::after {
+  content: 'Payment Options';
+  font-size: 1.8em;
+  margin-bottom: 0.8em;
+}
+.page-paymentselection main {
+  display: table-row;
+}
+.page-paymentselection main section {
+  display: table-cell;
+  padding: 0 1em;
+  text-align: center;
+}
+.page-paymentselection main section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 148px;
+}
+.page-paymentselection main section ul li {
+  display: block;
+}
+.page-paymentselection main section ul li button {
+  width: 148px;
+  height: 96px;
+  text-align: center;
+  padding: 1px;
+  color: white;
+  border: none;
+  border-radius: 1.5em;
+  margin: 0 0.5em 0.5em 0;
+  transform: translateZ(0px);
+}
+.page-paymentselection main section ul li button > span:nth-of-type(1) {
+  display: block;
+  padding: 4px;
+  height: 48px;
+  margin-bottom: 0.7em;
+}
+.page-paymentselection main section ul li button img {
+  display: block;
+  font-size: 1em;
+  margin: 0 auto;
+  max-height: 40px;
+  max-width: 130px;
+}
+.page-paymentselection main section ul li button:hover,
+.page-paymentselection main section ul li button:focus,
+.page-paymentselection main section ul li button:active {
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -moz-animation-name: wobble-to-top-right;
+  -o-animation-name: wobble-to-top-right;
+  -webkit-animation-name: wobble-to-top-right;
+  animation-name: wobble-to-top-right;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+.page-paymentselection main section ul li:first-child {
+  margin-top: 1em;
+}
+.page-paymentselection main section + section {
+  border-left: 1px solid #ccc;
+}
+.page-paymentselection main section.paymentgroup h2 {
+  display: none;
+}
+.page-paymentselection main section.paymentgroup ul::before {
+  font-size: 1.6em;
+}
+.page-paymentselection main section.paymentgroup-creditcard ul:lang(de)::before {
+  content: 'Kreditkarte';
+}
+.page-paymentselection main section.paymentgroup-creditcard ul::before {
+  content: 'Credit card';
+}
+.page-paymentselection main section.paymentgroup-onlinebanking ul:lang(de)::before {
+  content: 'Online-Banking*';
+}
+.page-paymentselection main section.paymentgroup-onlinebanking ul::before {
+  content: 'Online banking*';
+}
+.page-paymentselection main section.paymentgroup-onlinebanking ul:lang(de)::after {
+  content: '* Wenn du dein Abo mittels Online-Banking bezahlst, stimmst du zu, dass die Bezahlform ab dem 2. Monat in eine automatische SEPA-Lastschrift umgewandelt wird. Dafür ermächtigst du den Händler den jeweiligen Betrag einziehen zu lassen und weist dein Kreditinstitut an, die von uns auf dein Konto gezogene SEPA-Lastschrift, durchgeführt durch unsere Bank, einzulösen.\AHinweis: Du kannst innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrags verlangen. Es gelten dabei die mit unserem Kreditinstitut vereinbarten Bedingungen.';
+}
+.page-paymentselection main section.paymentgroup-onlinebanking ul::after {
+  content: '* By choosing a online banking payment provider, the user allows permission for the form of payment to be converted into an automatic SEPA direct debit beginning from the second contract period (eg from the second month). You therefore grant the merchant the right to collect the respective monthly payment, which will be carried out by our Bank, and to inform your credit institution to honour the SEPA direct debit transaction which has been taken from your account. You have the right to request a refund of the respective amount within 8 weeks of the debiting date. The terms and conditions agreed with our credit institution apply.';
+  font-size: 0.8em;
+  line-height: 1em;
+  white-space: pre-wrap;
+  display: block;
+  text-align: justify;
+  color: #888;
+}
+.page-paymentselection main section.paymentgroup-card ul:lang(de)::before {
+  content: 'Karte';
+}
+.page-paymentselection main section.paymentgroup-card ul::before {
+  content: 'Card';
+}
+.page-paymentselection main section.paymentgroup-invoice ul:lang(de)::before {
+  content: 'Auf Rechnung';
+}
+.page-paymentselection main section.paymentgroup-invoice ul::before {
+  content: 'Invoice';
+}
+.page-paymentselection main section.paymentgroup-onlinepaymentservice ul:lang(de)::before {
+  content: 'PayPal';
+}
+.page-paymentselection main section.paymentgroup-onlinepaymentservice ul::before {
+  content: 'PayPal';
+}
+.page-paymentselection main section.paymentgroup-directdebit ul:lang(de)::before {
+  content: 'Lastschrift';
+}
+.page-paymentselection main section.paymentgroup-directdebit ul::before {
+  content: 'Direct debit';
+}
+.page-paymentselection main section.paymentgroup-wallet ul::before {
+  content: 'Wallet';
+}
+@-moz-keyframes wobble-to-top-right {
+  16.65% {
+    -moz-transform: translate(5px, -5px);
+    -ms-transform: translate(5px, -5px);
+    -o-transform: translate(5px, -5px);
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  33.3% {
+    -moz-transform: translate(-4px, 4px);
+    -ms-transform: translate(-4px, 4px);
+    -o-transform: translate(-4px, 4px);
+    -webkit-transform: translate(-4px, 4px);
+    transform: translate(-4px, 4px);
+  }
+  49.95% {
+    -moz-transform: translate(3px, -3px);
+    -ms-transform: translate(3px, -3px);
+    -o-transform: translate(3px, -3px);
+    -webkit-transform: translate(3px, -3px);
+    transform: translate(3px, -3px);
+  }
+  66.6% {
+    -moz-transform: translate(-2px, 2px);
+    -ms-transform: translate(-2px, 2px);
+    -o-transform: translate(-2px, 2px);
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  83.25% {
+    -moz-transform: translate(1px, -1px);
+    -ms-transform: translate(1px, -1px);
+    -o-transform: translate(1px, -1px);
+    -webkit-transform: translate(1px, -1px);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes wobble-to-top-right {
+  16.65% {
+    -moz-transform: translate(5px, -5px);
+    -ms-transform: translate(5px, -5px);
+    -o-transform: translate(5px, -5px);
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  33.3% {
+    -moz-transform: translate(-4px, 4px);
+    -ms-transform: translate(-4px, 4px);
+    -o-transform: translate(-4px, 4px);
+    -webkit-transform: translate(-4px, 4px);
+    transform: translate(-4px, 4px);
+  }
+  49.95% {
+    -moz-transform: translate(3px, -3px);
+    -ms-transform: translate(3px, -3px);
+    -o-transform: translate(3px, -3px);
+    -webkit-transform: translate(3px, -3px);
+    transform: translate(3px, -3px);
+  }
+  66.6% {
+    -moz-transform: translate(-2px, 2px);
+    -ms-transform: translate(-2px, 2px);
+    -o-transform: translate(-2px, 2px);
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  83.25% {
+    -moz-transform: translate(1px, -1px);
+    -ms-transform: translate(1px, -1px);
+    -o-transform: translate(1px, -1px);
+    -webkit-transform: translate(1px, -1px);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes wobble-to-top-right {
+  16.65% {
+    -moz-transform: translate(5px, -5px);
+    -ms-transform: translate(5px, -5px);
+    -o-transform: translate(5px, -5px);
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  33.3% {
+    -moz-transform: translate(-4px, 4px);
+    -ms-transform: translate(-4px, 4px);
+    -o-transform: translate(-4px, 4px);
+    -webkit-transform: translate(-4px, 4px);
+    transform: translate(-4px, 4px);
+  }
+  49.95% {
+    -moz-transform: translate(3px, -3px);
+    -ms-transform: translate(3px, -3px);
+    -o-transform: translate(3px, -3px);
+    -webkit-transform: translate(3px, -3px);
+    transform: translate(3px, -3px);
+  }
+  66.6% {
+    -moz-transform: translate(-2px, 2px);
+    -ms-transform: translate(-2px, 2px);
+    -o-transform: translate(-2px, 2px);
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  83.25% {
+    -moz-transform: translate(1px, -1px);
+    -ms-transform: translate(1px, -1px);
+    -o-transform: translate(1px, -1px);
+    -webkit-transform: translate(1px, -1px);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+/*
+ * card details input
+ */
+.page-card main fieldset {
+  position: relative;
+  margin: 20px auto 7.5em;
+  width: 400px;
+  padding: 75px 20px 20px;
+  border: none;
+  border-radius: 1em;
+  height: 222px;
+  /*number*/
+  /*validity*/
+  /*name*/
+  /*cvc*/
+  /*name*/
+}
+.page-card main fieldset legend {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  font-weight: 300;
+  font-size: 2em;
+  color: white;
+  letter-spacing: 1px;
+}
+.page-card main fieldset .form-group:nth-of-type(1) label {
+  color: white;
+  font-size: 0.85em;
+}
+.page-card main fieldset .form-group:nth-of-type(1) input {
+  width: 100%;
+  height: 2em;
+  border: none;
+  background-color: rgba(225, 225, 255, 0.8);
+}
+.page-card main fieldset .form-group:nth-of-type(2) {
+  padding-left: 80px;
+  padding-top: 1em;
+}
+.page-card main fieldset .form-group:nth-of-type(2) label {
+  display: none;
+}
+.page-card main fieldset .form-group:nth-of-type(2) .form-input::before {
+  content: 'VALID\aTHRU*';
+  color: white;
+  font-size: 0.7em;
+  line-height: 1.1em;
+  white-space: pre;
+  display: inline-block;
+}
+.page-card main fieldset .form-group:nth-of-type(2) select {
+  height: 2em;
+  border: none;
+  background-color: rgba(225, 225, 255, 0.8);
+}
+.page-card main fieldset .form-group:nth-of-type(3) label {
+  color: white;
+  font-size: 0.85em;
+}
+.page-card main fieldset .form-group:nth-of-type(3) input {
+  border: none;
+  height: 2em;
+  background-color: rgba(225, 225, 255, 0.8);
+}
+.page-card main fieldset .form-group:nth-of-type(4) {
+  position: absolute;
+  left: 50%;
+  bottom: -4.6em;
+  border-radius: 0 0 1em 1em;
+  padding: 0.5em 2em 0.9em 2em;
+}
+.page-card main fieldset .form-group:nth-of-type(4) label > input:checked + span ~ span {
+  background: none repeat scroll 0 0 #ffa332;
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: -2em;
+  top: 5em;
+  width: 400px;
+  border-radius: 1em;
+}
+.page-card main fieldset .form-group:nth-of-type(4) label > input:checked + span ~ span::after {
+  bottom: 100%;
+  left: 260px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #ffa332;
+  border-width: 1em;
+  margin-left: -1em;
+}
+.page-card main fieldset .form-group:nth-of-type(5) {
+  margin-top: 7em;
+}
+/*
+ * Redirect pages
+ */
+/*
+ * Address pages
+ */
+.page-address main fieldset {
+  display: table;
+  width: 100%;
+  padding: 1em;
+}
+.page-address main fieldset .form-group {
+  display: table-row;
+}
+.page-address main fieldset .form-group > div {
+  display: table-cell;
+  padding-bottom: 1em;
+}
+.page-address main fieldset .form-group .form-label {
+  width: 170px;
+  vertical-align: top;
+}
+.page-address main fieldset .form-group .form-input {
+  width: 400px;
+}
+/*
+ confirmation page
+*/
+.page-confirmation main dl {
+  padding: 1em;
+}
+.page-confirmation main dd {
+  margin-left: 0;
+  margin-left: 170px;
+}
+.page-confirmation main dt {
+  float: left;
+  width: 150px;
+  clear: left;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.page-confirmation main dt::after {
+  content: ' :';
+}

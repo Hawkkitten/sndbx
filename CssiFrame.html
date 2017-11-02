@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="assets/css/vendors.css" />
+	<link rel="stylesheet" href="assets/css/helppage.css">
+
+	<title>Saferpay documentation | docs</title>
+</head>
+<body data-spy="scroll" data-target="#navScrollspy">
+
+	<div id="content" class="container-fluid">
+		<div class="row">
+
+			<nav class="col-lg-2 hidden-xs hidden-sm hidden-md" id="navScrollspy">
+				<div data-spy="affix">
+					<h3>
+						<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+						<span class="text-primary">docs</span>
+					</h3>
+
+					<ul class="nav">
+								<li>
+										<a href="index.html">Introduction</a>
+											<ul class="nav">
+													<li><a href="#intro-requirement">Requirements</a></li>
+													<li><a href="#pci">Data Security and PCI DSS</a></li>
+													<li><a href="#3ds">3-D Secure</a></li>
+													<li><a href="#dcc">Dynamic Currency Conversion</a></li>
+													<li><a href="#paymentmethods">Supported Payment Methods</a></li>
+													<li><a href="#licenses">Licences</a></li>
+													<li><a href="#pm-functions">Payment Method Features</a></li>
+													<li><a href="#capture-batch">Capture and Daily Closing</a></li>
+													<li><a href="#capture">Capture</a></li>
+													<li><a href="#closing">Daily Closing</a></li>
+													<li><a href="#special">Special Cases</a></li>
+													<li><a href="#cancel-refund">Cancel or Refund</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_PP.html">Payment Page</a>
+											<ul class="nav">
+													<li><a href="#pp-initialize">PaymentPage Initialize</a></li>
+													<li><a href="#pp-initialize-response">PaymentPage Initialize Response</a></li>
+													<li><a href="#pp-transaction">Redirect and Transaction</a></li>
+													<li><a href="#pp-retshop">Return to the Shop</a></li>
+													<li><a href="#pp-assert">PaymentPage Assert</a></li>
+													<li><a href="#pp-captcancel">Capture or Cancel</a></li>
+													<li><a href="#pp-demo">Demo</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="Integration_trx.html">Transaction Interface</a>
+											<ul class="nav">
+													<li><a href="#trx-cc">Credit Cards</a></li>
+													<li><a href="#trx-ini">Transaction Initialize</a></li>
+													<li><a href="#trx-3ds">3-D Secure and DCC</a></li>
+													<li><a href="#trx-retshop">Return to the Shop</a></li>
+													<li><a href="#trx-ta">Transaction Authorize</a></li>
+													<li><a href="#trx-captcancel">Capture or Cancel</a></li>
+													<li><a href="#trx-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#trx-demo">Demo</a></li>
+													<li><a href="#trx-post">Using your own HTML-Form</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="recurring.html">Recurring Payments</a>
+											<ul class="nav">
+													<li><a href="#recurring-req">Requirements</a></li>
+													<li><a href="#recurring-payment-methods">Supported Payment Methods</a></li>
+													<li><a href="#recurring-referenced">Referenced  Transactions Method</a></li>
+													<li><a href="#recurring-auto">Automating the Recurring Payments</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="app-integration.html">Mobile App integration</a>
+											<ul class="nav">
+													<li><a href="#mobile-process">Process</a></li>
+													<li><a href="#mobile-faq">FAQ</a></li>
+											</ul>
+								</li>
+								<li class="active">
+										<a href="CssiFrame.html">IFrame Integration and CSS</a>
+											<ul class="nav">
+													<li><a href="#css-iframe">Iframe Integration</a></li>
+													<li><a href="#css-pp">Payment Page</a></li>
+													<li><a href="#css-trxini">Transaction Initialize</a></li>
+													<li><a href="#css-aliasins">Alias Insert</a></li>
+													<li><a href="#css-iframe_size">Size of the Iframe</a></li>
+													<li><a href="#css-usecss">Using CSS</a></li>
+													<li><a href="#css-element">CSS Elements</a></li>
+													<li><a href="#css-selector">CSS Selectors</a></li>
+													<li><a href="#css-info">Additional Info</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PayPal.html">PayPal</a>
+											<ul class="nav">
+													<li><a href="#ppal-requirement">Requirements</a></li>
+													<li><a href="#api-access">Grant API Approval for Saferpay</a></li>
+													<li><a href="#merchant-protection">Seller Protection</a></li>
+													<li><a href="#partial-capture">Partial Capture</a></li>
+													<li><a href="#capture">Capture and the solvency of the customer</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="BillPay.html">BillPay</a>
+											<ul class="nav">
+													<li><a href="#bp-requirement">Requirements</a></li>
+													<li><a href="#bp-approval-api">BillPay Certification via API</a></li>
+													<li><a href="#bp-assert">Assert</a></li>
+													<li><a href="#bp-capt">Capture</a></li>
+													<li><a href="#bp-approval-bo">BillPay Certification via Saferpay Backoffice</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="PostFinance.html">Swiss Postcard</a>
+											<ul class="nav">
+													<li><a href="#pf-requirement">Requirements</a></li>
+													<li><a href="#pf-alias">Storage in the Secure Card Data Store</a></li>
+													<li><a href="#pf-regdial">Registration Dialogue</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="sofort.html">SOFORT</a>
+											<ul class="nav">
+													<li><a href="#sf-requirement">Requirements</a></li>
+													<li><a href="#sf-newproject">Create a new project for SOFORT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="eps.html">eps</a>
+											<ul class="nav">
+													<li><a href="#eps-requirement">Requirements</a></li>
+													<li><a href="#eps-newproject">How toget an EPS acceptance agreement</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="paydirekt.html">paydirekt</a>
+											<ul class="nav">
+													<li><a href="#pd-requirement">Requirements</a></li>
+													<li><a href="#pd-address">Handling of delivery address</a></li>
+													<li><a href="#pd-pending">Display of pending status for bookings</a></li>
+													<li><a href="#pd-note">Notification after change from pending to final status</a></li>
+													<li><a href="#pd-query">Querying the transaction status</a></li>
+													<li><a href="#pd-refund">Refunds</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+										<a href="paymentmeans.html">Payment means for testing</a>
+											<ul class="nav">
+													<li><a href="#pm-visa">VISA</a></li>
+													<li><a href="#pm-mc">Mastercard</a></li>
+													<li><a href="#pm-amex">American Express</a></li>
+													<li><a href="#pm-diners">Diners Club</a></li>
+													<li><a href="#pm-maestro">Maestro international</a></li>
+													<li><a href="#pm-jcb">JCB</a></li>
+													<li><a href="#pm-myone">My One</a></li>
+													<li><a href="#pm-bonus">Bonus Card</a></li>
+													<li><a href="#pm-bc">Bancontact</a></li>
+													<li><a href="#pm-sepa">SEPA Direct Debit</a></li>
+													<li><a href="#pm-paypal">PayPal</a></li>
+													<li><a href="#pm-twint">TWINT</a></li>
+											</ul>
+								</li>
+								<li>
+										<a href="contact.html">Contact</a>
+								</li>
+								<li>
+										<a href="http://saferpay.github.io/jsonapi/" target="_blank">API Specification</a>
+								</li>
+								<li>
+										<a><h4>API DEMO</h4></a>
+								</li>
+								<li>
+										<a href="pp_demo.html">Payment Page Demo</a>
+								</li>
+								<li>
+										<a href="trx_demo.html">Transaction Interface Demo</a>
+								</li>
+								<li>
+										<a href="scd_demo.html">Secure Alias Store Demo</a>
+								</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<span class="print-page-break"></span>
+
+			<main class="col-lg-10 col-sm-12">
+
+				<h3 class="hidden-lg">
+					<span style="font-size: x-large; font-weight: bold">Saferpay</span>
+					<span>docs</span>
+				</h3>
+
+				
+<section><h1>Iframe Integration and CSS</h1><div class="row"><div class="col-lg-6"><p>The Saferpay Payment Page, the Transaction Interface and Secure Card Data offer the options for Iframe integration and custom design using Cascading Style Sheets (CSS). The following describes how these features can be used and what needs to be adhered to.</p></div></div></section><section id="css-iframe"><h2><a name="css-iframe"></a> Iframe Integration</h2><div class="row"><div class="col-lg-6"><p>Iframe integration is supported for these methods:</p><ul>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a></li>
+</ul><p>The Response Message includes a respective <strong>RedirectURL</strong>, if successful executed. This URL needs to be embedded in the Iframe.</p></div></div></section><section id="css-pp"><h3><a name="css-pp"></a> Payment Page</h3><div class="row"><div class="col-lg-6"><p>The Payment Page has a responsive design and automatically adapts to the size of the Iframe. Here are two examples:</p><ul>
+<li>Full size:</li>
+</ul><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_desktop.png" alt="alt text" title="Payment Page desktop view"></p><ul>
+<li>Small size:</li>
+</ul><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_mobile.png" alt="alt text" title="Payment Page mobile view"></p></div></div></section><section id="css-trxini"><h3><a name="css-trxini"></a> Transaction Initialize</h3><div class="row"><div class="col-lg-6"><p>Here, the Saferpay Card Entry Form appears for data capture of the card details:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pay_with_cvc.png" alt="alt text" title="Saferpay Card Entry Form"></p></div></div></section><section id="css-aliasins"><h3><a name="css-aliasins"></a> Alias Insert</h3><div class="row"><div class="col-lg-6"><p>Here, the Saferpay Card Registration Form opens:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_alias_insert.png" alt="alt text" title="Card Registration Form"></p><div class="warning">
+  <p><strong>Attention:</strong> For registration, the capture of the card verification code (CVC) is not enabled, because it can only be saved by Saferpay on a temporary, 20-minute basis. PCI specifications prohibit permanent storage. For payments with the CVC, <a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Inintialize</a> and<a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Authorize">Transaction Authorize</a> shall be used.</p>
+</div></div></div></section><section id="css-iframe_size"><h2><a name="css-iframe_size"></a> Size of the Iframe</h2><div class="row"><div class="col-lg-6"><p>The size of the Iframe is communicated to the merchants via an HTML5-POST message, which can be captured using JavaScript. The Iframe can thus be dynamically adapted to the content.</p></div></div></section><section id="html-form"><h3><a name="html-form"></a> Example of HTML Form</h3><div class="row"><div class="col-lg-6"><pre><code class="language-HTML">&lt;HTML&gt;
+   &lt;head&gt;
+      &lt;title&gt;Payment Form&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;h1&gt;Payment Form&lt;/h1&gt;
+      &lt;iframe src= &quot;&lt;%= RedirectUrl %&gt;&quot;&gt; &lt;/iframe&gt; 
+   &lt;/body&gt;
+&lt;/HTML&gt;
+</code></pre><div class="info">
+  <p>The POST message is transmitted in JSON format:</p>
+</div><pre><code class="language-json">{  
+  &quot;message&quot;:&quot;css&quot;,
+  &quot;height&quot;:450,
+  &quot;width&quot;:650
+}
+</code></pre><div class="info">
+  <p>JavaScript example for receipt of message (for jQuery &gt;= 1.9)</p>
+</div><pre><code class="language-javascript">$(window).bind(&quot;message&quot;, function (e) {
+	$(&quot;#iframe&quot;).css(&quot;height&quot;, e.originalEvent.data.height + &quot;px&quot;);
+});
+</code></pre><div class="warning">
+  <p><strong>Attention:</strong> Not every page reports its size to the merchant&#8217;s system. However, Saferpay has to forward users to third parties during the payment process (Like with the 3D Secure procedure), thus we recommend a&nbsp;minimum size of 450x450 pixels.</p>
+</div></div></div></section><section id="css-usecss"><h2><a name="css-usecss"></a> Using CSS</h2><div class="row"><div class="col-lg-6"><p>The use of Cascading Style Sheets is available via the following methods:</p><ul>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_PaymentPage_Initialize">PaymentPage Initialize</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Transaction_Initialize">Transaction Initialize</a></li>
+<li><a href="https://saferpay.github.io/jsonapi/#Payment_v1_Alias_Insert">Alias Insert</a></li>
+</ul><p>With a request using the <strong>Styling</strong> container, the <strong>CssUrl</strong> parameter must be forwarded, alongside a reference to the CSS file which is to be used.</p></div></div></section><section id="css-element"><h2><a name="css-element"></a> CSS Elements</h2><div class="row"><div class="col-lg-6"><p><strong>Element Name</strong></p><pre><code>h1{
+  text-decoration:&nbsp;underline;
+}
+</code></pre><p><strong>Class Name</strong></p><pre><code>h1{
+  text-decoration:&nbsp;underline;
+}
+</code></pre><div class="info">
+  <p><strong>Tip:</strong> Most modern browsers include tools that simplify designing with CSS. CSS can thus be edited directly in the browser, and the results can be observed.</p>
+</div><ul>
+<li>Example for Chrome browser:</li>
+</ul><p>With the right mouse button, click the item to be edited:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_inspect.png" alt="alt text" title="Inspect"></p><p>It opens a menu which shows the HTML code and the CSS classes with the corresponding attributes:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_code.png" alt="alt text" title="Inspect code"></p><p>As an example, the text colour is adjusted here (CSS attributes can also be added and removed, if supported by the browser):</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_inspect_color.png" alt="alt text" title="Inspect color"></p><p>The change is immediately displayed in the browser. Then, the code simply needs to be transferred to the CSS file:</p><p><img src="https://raw.githubusercontent.com/saferpay/sndbx/master/images/iframe_pp_card_data.png" alt="alt text" title="See changes"></p><p>The following elements should <strong>NOT</strong> be used:</p><ul>
+<li><p><strong>Element ID:</strong> Element ID should not be used because the ID used may change without notice.</p>
+</li>
+<li><p><strong>Element Attribute:</strong> Element attributes should not be used, because attributes (name, value, data-*, etc.) can change without notice.</p>
+</li>
+</ul></div></div></section><section id="css-selector"><h2><a name="css-selector"></a> CSS Selectors</h2><div class="row"><div class="col-lg-6"><p>As a principle, all CSS selectors for CSS1, CSS2 and CSS3 are supported, depending on the used browser.</p></div></div></section><section id="css-info"><h2><a name="css-info"></a> More Information</h2><div class="row"><div class="col-lg-6"><ul>
+<li><p>The CSS file that is referenced by the CssUrl parameter must be stored on a web server that supports HTTPS.</p>
+</li>
+<li><p>When aiming for the PCI DSS SAQ-A compliance, you must set the <strong>ContentSecurityEnabled</strong> parameter inside the <strong>Styling</strong>-container to <strong>true</strong>. Furthermore, you have to consider the following things:</p>
+<ul>
+<li>Every bit of code must be contained within one CSS-file. Importing other files is not supported!</li>
+<li>Image-files must be loaded via a Data-Url within the CSS file itself!</li>
+</ul>
+</li>
+<li><p>It is recommended to display a progress bar while something is loading in an Iframe.</p>
+</li>
+<li><p>The PCI specifications <strong>DO NOT</strong> allow jumping into the Iframe with JavaScript. So manipulating it, using JavaScript, is strictly permitted!</p>
+</li>
+<li><p>Some third party payment providers (e.g. PayPal) <strong>DO NOT</strong> support the integration inside an iFrame. Thus, the PaymentPage will break out of the frame beforehand!</p>
+</li>
+<li><p>Integrating Saferpay via an iFrame will also cause the SuccessUrls to be called inside said frame. If you want to present the return pages in fullsize, you can break out of the frame yourself, using JavaScript!</p>
+</li>
+</ul><div class="info">
+  <p>Example of Iframe break out in JavaScript</p>
+</div><pre><code class="language-html">&lt;HTML&gt;
+    &lt;head&gt;
+        &lt;title&gt;Success Page&lt;/title&gt;
+        &lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot;&gt;
+
+        function iframe_breakout()
+        {
+            if (top.location != location){
+                top.location.href = document.location.href;
+            }
+        }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body onload=&quot;iframe_breakout()&quot;&gt;
+		
+        SOME CODE&#8230;
+	
+    &lt;/body&gt;
+&lt;/HTML&gt;
+</code></pre><div class="warning">
+  <p><strong>Attention:</strong> Executing this code, will re-load the return-page, resulting in it being called twice. Please consider this while <mark> implementing!</mark></p>
+</div></div></div></section>
+
+			</main>
+
+		</div>
+	</div>
+
+	<div class="scroll-top-wrapper">
+		<a href="#top" class="scroll-top-inner" onclick="$('html,body').animate({ scrollTop: 0 }, 'slow'); return false;">
+			<span class="glyphicon glyphicon-chevron-up"></span> Back to Top
+		</a>
+	</div>
+
+	<script src="assets/js/vendors.js"></script>
+	<script src="assets/js/helppage.js"></script>
+</body>
+</html>
+
